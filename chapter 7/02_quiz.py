@@ -5,7 +5,7 @@ while num<=50:
     print(num)
     num=num+1  
 
-
+#Determine element of a list by while loop
 list=[45,67,34,89]
 a=0
 while a<len(list):
