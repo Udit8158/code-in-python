@@ -6,4 +6,3 @@ for i in range(1,num+1):
     s=s+i
 
 print('sum of all natural numbers till '+str(num) +' = '+ str(s))
-    
