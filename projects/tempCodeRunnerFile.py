@@ -1,6 +1,4 @@
-f randomno==1:
-#     comp="s"
-# elif randomno==2:
-#     comp="w"
-# elif randomne:
-#     comp=
+if you in optionlist:
+    #     print(None)
+    # else:
+    #     prin

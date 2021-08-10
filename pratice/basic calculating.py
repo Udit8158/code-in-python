@@ -11,3 +11,4 @@ def div(d,f):
 num1=int(input("Enter a num :"))
 num2=int(input("Enter a num :"))
 add(num1,num2)
+
