@@ -14,7 +14,7 @@
 #This is the actual use of function
 # printing percent of marks by using function
 def percentage(marks):
-    return(sum(marks2)/len(marks2))
+    return(sum(marks)/len(marks))
 marks1=[45,56,57,34]
 marks2=[43,56,27,74,5]
 percentage1=percentage(marks1)
