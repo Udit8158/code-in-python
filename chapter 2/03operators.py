@@ -5,7 +5,8 @@ num_1=4;num_2=6
 print(num_1+num_2) # to add
 print(num_1-num_2) #to substract
 print(num_1*num_2) #to multiply
-print(num_1/num_2) #to devide
+print(num_1//num_2)  #return an integer after devide
+print(num_1/num_2) #return an float after devide
 print(num_1%num_2) #To get remainder two number.
 # to devide we always get a float number
 d=num_1/num_2
