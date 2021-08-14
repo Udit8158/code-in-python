@@ -7,7 +7,7 @@ class RailwayApplication():     #definig the class
         print(f"Train is {self.Train}")
         print(f"Adress is {self.Adress}")
         print(f"Date is {self.Date}")
-uditsapplication=RailwayApplication()   #introducing the class in the code     
+uditsapplication=RailwayApplication()   #introducing the class in the code    . This step is also called instantiation 
 uditsapplication.Name="Udit"            
 uditsapplication.Train="Rajdhani"
 uditsapplication.Adress="Westbengal"
