@@ -2,7 +2,7 @@
 # SNAKE Water Gun GAME (same as rock paper siser)
 
 import random   #Importing random module to get random no. from comp
-optionlist=['s','w','g']    #option for user
+# optionlist=['s','w','g']    #option for user
 # Creating a function and using some conditional statement
 def gameWin(comp,you):
     if comp=="s":            #we can introduced a variable in a if statement like this(comp)
@@ -31,7 +31,7 @@ def gameWin(comp,you):
         elif you=="g":
             return None
         else:
-            return "cancelled"    
+            return "cancelled"   
      
     
 print("Comp turns:Sanake(s),Water(w),Gun(g)")

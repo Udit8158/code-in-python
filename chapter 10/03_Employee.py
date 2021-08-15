@@ -10,7 +10,10 @@ print(Udit.compamy)
 print(Harry.compamy)
 
 # Changing class atributes
+Employee.slary="50LPA"
+print(Udit.slary)
 
+# create instance atributes
 Harry.compamy="Microsoft"   
 print(Harry.compamy)
 Udit.slary="50LPA"
