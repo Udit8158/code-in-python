@@ -1,0 +1,1 @@
+seats=seats-1
