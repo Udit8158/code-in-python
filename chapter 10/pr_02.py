@@ -1,5 +1,5 @@
 # Date:15/08/2021
-
+#creating a calculator by a class
 class Calculator:
     def __init__(self,num):
         self.number=num         #describe the num
