@@ -1,1 +1,1 @@
-seats=seats-1
+del compan

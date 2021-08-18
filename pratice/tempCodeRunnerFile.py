@@ -1,1 +1,1 @@
-self.seat=self.seat-1
+pip install speechRecognition
