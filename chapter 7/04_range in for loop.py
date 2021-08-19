@@ -7,3 +7,6 @@ for a in range(1,7):
 
 for b in range(1,7,2):
     print(b)           #This print 1 to 6 but skip every second value
+while c==0:
+    if t>8:
+     break
