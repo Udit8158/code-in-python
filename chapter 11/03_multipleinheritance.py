@@ -12,7 +12,7 @@ class Freelancer:         #It is called Derived class or called child class
     def level(self):
         print(f"The level of the {self.programmer} is {self.level}")
 
-class Programmer(Employe,Freelancer):     #Here the priority goes to the Employe class
+class Programmer(Employe,Freelancer):     #Here the priority goes to the Employe class. Ypu can also add here muliple parrent class
     salary="40 LPA"
     def getinfo(self):
         print("He is so good ")

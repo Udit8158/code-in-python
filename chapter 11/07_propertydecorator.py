@@ -1,4 +1,4 @@
-# Date:18/08/2021
+# Date:19/08/2021
 
 class Employee:
     company="Sony"
@@ -12,12 +12,14 @@ class Employee:
     def changesalarybonous(cls,salb):
         cls.salarybonous=salb
 
-    @totalsalary.setter
+    @totalsalary.setter          #setter method
     def totalsalary(self,value):
-        print(self.salarybonous==self.salary-value)
+        print(self.salarybonous==value-self.totalsalary)
 Ramu= Employee()
-Ramu.totalsalary
-Ramu.changesalarybonous(1500)
-Ramu.totalsalary       #now total salary is changed
-Ramu.totalsalary=11500
-totalsalary(11500)
+print(Ramu.salarybonous)
+print(Ramu.salary)
+print(Ramu.totalsalary)
+Ramu.changesalarybonous(3000)
+print(Ramu.totalsalary)
+Ramu.totalsalary=14000
+print(Ramu.salarybonous)

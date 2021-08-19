@@ -1,6 +1,8 @@
 # Date:10/08/2021
-def mult(n,m):
-    print(n*m)
+
+def multtable(n):
+    for i in range(1,11):
+        print(f"{n} X {i} = {n*i}\n")
+multtable(num_1)
+
 num_1=int(input("Enter a number: "))
-num_2=int(input("Enter a number: "))
-mult(num_1, num_2)
