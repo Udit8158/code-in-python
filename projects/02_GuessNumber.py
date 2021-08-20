@@ -2,34 +2,38 @@
 #Generating a lottery type system by using python
 import random  #Importing Random
 
-lowRange = 3
-highRange = 7  #Defining Range to chose the user's number
-n = random.randint(lowRange, highRange)  #Generating a random range
-turnsToFind = 5  #Defining user's turn
-e = turnsToFind-1 #Just for my comfort
+lowRange = 1
+highRange = 40  #Defining Range to chose the user's number
+randomNo= random.randint(lowRange, highRange)  #Generating a random range
+turnsToFind = 10  #Defining user's turn
 
-
-print(f"The unknown number was{n}")
-print(f"Try to guess a number which in hidden,but the number is in range between {lowRange} to {highRange}")
-print(f"You have only {turnsToFind} turns")
-
-#Run a infinite while loop by using boolean value True 
-while True:  
-    g = int(input("Enter your guess:"))  #Taking a number from user  and then use some logic by if-else statements.
-    if g > highRange or g < lowRange:
-        print("Your number is not in givven range")
-        break
-    if e < 0:
+# print(randomNo)
+print(f"Hi,\nI am a guess game system\nPlease Enter your guess between {lowRange} to {highRange}\nBut be careful you have only {turnsToFind} turns to do this")
+userguess=None
+userturn=0
+while (userguess!=randomNo):       #condition for stop the loop
+    userguess=int(input("Enter your guess: "))   #Take a number from user to run the game 
+    #Do some conditional statements
+    if turnsToFind<=1:
         print("Your turn is over")
         break
-    if g == n:
-        for i in range(0,e+1):  #Trying to show the turn number where user crackit , but i can't
-            print(f"You guess sucessfully in your {i} number turn")
-            break
-    else:
-        print(f"Try again,you entered a wrong guess\nYou left {e} turns")
-        e = e-1
+    
+    if userguess==randomNo:
+        print("You entered a right guess")
+        break
+    elif userguess<randomNo:
+        turnsToFind=turnsToFind-1
+        print(f"Enter a big number\nYour left only {turnsToFind} turns")
         continue
-
-
-# print(f"The unknown number was{n}")
+    
+    elif userguess>randomNo:
+        turnsToFind=turnsToFind-1
+        print(f"Enter a small number\nYour left only {turnsToFind} turns")
+        continue
+    
+    if userguess<highRange or userguess>lowRange:
+        turnsToFind=turnsToFind-1
+        print(f"Entered a valid guess between the limit\nYour left only {turnsToFind} turns")
+        continue
+    # with open("Highscore.txt","w") as f:
+    #     f.write(Highscore)

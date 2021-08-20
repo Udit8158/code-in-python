@@ -1,1 +1,1 @@
-return str.strip
+marks
