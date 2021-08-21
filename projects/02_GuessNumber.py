@@ -9,31 +9,36 @@ turnsToFind = 10  #Defining user's turn
 
 # print(randomNo)
 print(f"Hi,\nI am a guess game system\nPlease Enter your guess between {lowRange} to {highRange}\nBut be careful you have only {turnsToFind} turns to do this")
+
 userguess=None
 userturn=0
+
 while (userguess!=randomNo):       #condition for stop the loop
     userguess=int(input("Enter your guess: "))   #Take a number from user to run the game 
     #Do some conditional statements
-    if turnsToFind<=1:
-        print("Your turn is over")
+    if userguess==randomNo:
+        userturn+=1
+        print(f"You entered a right guess in {userturn} turns")
         break
     
-    if userguess==randomNo:
-        print("You entered a right guess")
-        break
     elif userguess<randomNo:
-        turnsToFind=turnsToFind-1
-        print(f"Enter a big number\nYour left only {turnsToFind} turns")
+        userturn+=1
+        print(f"Enter a big number\nIt is your {userturn} turn")
         continue
     
     elif userguess>randomNo:
-        turnsToFind=turnsToFind-1
-        print(f"Enter a small number\nYour left only {turnsToFind} turns")
+        userturn+=1
+        print(f"Enter a small number\nIt is your {userturn} turn")
         continue
     
-    if userguess<highRange or userguess>lowRange:
-        turnsToFind=turnsToFind-1
-        print(f"Entered a valid guess between the limit\nYour left only {turnsToFind} turns")
-        continue
-    # with open("Highscore.txt","w") as f:
-    #     f.write(Highscore)
+    
+#Open a file to save the high score
+with open("Highscore.txt","r") as f:
+    Highscore=int(f.read())
+#condition to save the high score
+if userturn<Highscore:
+    print(f"Oh!You just broke high score and your new score is {userturn} number of guesses. ")
+    with open("Highscore.txt","w") as f:
+        f.write(str(userturn))
+
+    
