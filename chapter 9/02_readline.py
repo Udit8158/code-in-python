@@ -6,3 +6,4 @@ readline2=f.readline()
 print(readline2)
 
 f.close()  #Actually readline function print a single line at a time
+# 'readlines' function print in list
