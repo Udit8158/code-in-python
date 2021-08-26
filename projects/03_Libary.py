@@ -8,7 +8,7 @@ class Libary:
     def displayAvailableBook(self):     #To display all Libary books
         print("\tAvialable books are: ")
         for book in self.books:
-            print("\t    "+ book)
+            print(f"'{book}'",end=",")  #Printing names of books horizontally
     
     def borrowBook(self,bookname):     #To borrow book
         if bookname in self.books:
