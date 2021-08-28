@@ -2,25 +2,29 @@ import pyttsx3
 import datetime
 import speech_recognition as sr
 import wikipedia
+import webbrowser
+import os
+import random
 
-engine = pyttsx3.init()
-hour =int(datetime.datetime.now().hour)
 
 def speak(audio):
+    ''' 
+    used for play the audio using pyttsx3 module
+    '''
     engine.say(audio)
     engine.runAndWait()
 
 
-def wishme(name):
+def wishme(user):
+    '''this used to wish and introduce itself'''
     if hour > 12:
         speak("Hi,I am Jarvis, ")
-        speak(f"Good Afternoon sir How may I help you")
+        speak(f"Good Afternoon {user} How may I help you")
     elif hour<=12:
-       speak("Hi,I am Jarvis,Sir, ")
-       speak(f"Good Morning sir How may I help you")
+       speak("Hi,I am Jarvis, ")
+       speak(f"Good Morning {user} How may I help you")
 def takeCommand():
-    #It takes microphone input from the user and returns string output
-
+    '''It takes microphone input from the user and returns string output'''
     r = sr.Recognizer()
     with sr.Microphone() as source:
         print("Listening...")
@@ -31,26 +35,57 @@ def takeCommand():
     try:
         print("Recognizing...")    
         query = r.recognize_google(audio,language='en-in')
-        print(f"User said: {query}\n")
+        print(f"You said: {query}\n")
 
     except Exception as e:
         # print(e)    
         print("Say that again please...")  
         return "None"
     return query
-if __name__=="__main__":
-    wishme("Udit")
 
+
+if __name__=="__main__":
+    
+    engine = pyttsx3.init()
+    hour =int(datetime.datetime.now().hour)
+    randomNo = random.randint(0,10 )
+    # user = input("Enter your name :")
+
+    wishme("udit")
+    
     while True:
         query = takeCommand().lower()
         #some logic
+        # if "Ok" or "Hello" or "Hi" in query:
+        #     wishme(user)
         if 'wikipedia' in query:
             print("Searching from wikipedia")
             query = query.replace('wikipedea','')
             result = wikipedia.summary(query,sentences=3)
             print(result)
             speak(result)
+        
+        elif "open google" in query:   #Open any website using webbrowser module
+            speak("opening google...")
+            webbrowser.open("google.com")
 
+        elif "open youtube" in query:
+            speak("opening youtube")
+            webbrowser.open("youtube.com")
+
+        
+        elif "play music " or "play song" in query:    #Playing music with the help of os module 
+            music_dir = "D:\\music"
+            songs = os.listdir(music_dir)
+            speak("playing a random music")
+            print(songs)
+            os.startfile(os.path.join(music_dir,songs[randomNo]))
+        
+        elif "close" or "stop" in query:            #for close
+            speak(f"I am closing")
+            break
+
+       
     
     
    
