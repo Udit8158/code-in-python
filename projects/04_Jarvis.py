@@ -10,6 +10,7 @@ import os
 import random
 
 # Writting some functions
+
 def speak(audio):
     ''' 
     used for play the audio using pyttsx3 module
@@ -69,9 +70,9 @@ def openbrowser(site_name):
     speak(f"opening {site_name}")
     webbrowser.open(site_name)
 
-def Introduce():
+def introduce():
     '''Jarvis introduce himself'''
-    speak("Hi,I am Jarvis,a desktop voice assistent made by Udit on 27th July,2021.I can do some limited number of work for you.So how can I help you sir.")
+    speak("Hi,I am Jarvis,a desktop voice assistent,  made by Udit on 27th July,2021 , I can do some limited number of work for you, So how can I help you sir.")
 
 def telltime():
     '''Jarvis just speak time with the help of datetime module'''
@@ -83,8 +84,10 @@ def telldate():
     '''Tell full version of date using datetime module'''
     day = datetime.datetime.now().strftime("%d")
     month = datetime.datetime.now().strftime("%B")
-    year = datetime.datetime.now().strftime("Y")
-    speak(day,month,year)
+    year = datetime.datetime.now().strftime("%Y")
+    speak(day)
+    speak(month)
+    speak(year)
 
 
 if __name__=="__main__":
@@ -119,22 +122,30 @@ if __name__=="__main__":
         elif "open github" in query:
             openbrowser("github.com")
 
-        elif "introduce" or "introduction" or "who are you" in query:
-            Introduce() 
+        elif "introduce"  in query:
+            introduce()
+
+        elif "who are you" in query:
+            introduce()
 
         elif "time"  in query:
             telltime()  
 
         elif "date" in query:
             telldate()
+        
+        elif "nothing" in query:
+            speak("ok then,no problem,I always here to help you")
 
+        elif "who made you" in query:
+            speak("My master is udit,He made me")
         
-        # elif "play music " or "play song" in query:    #Playing music with the help of os module 
-        #     playmusic()
+        elif "play music"  in query:    #Playing music with the help of os module 
+            playmusic()
         
-        elif "close" or "stop" in query:            #for close
-            speak(f"I am closing")
-            break
+        elif "close"  in query:            #for close
+            speak(f"I am closing,Bye")
+            exit()
 
 
        
